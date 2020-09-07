@@ -58,16 +58,14 @@ int main( int argc, char** argv )	{
   double scale = 1.00;
   char filename1[]="/home/sahil/Desktop/2011_09_26/2011_09_26_drive_0059_sync/image_00/data/0000000000.png";
   char filename2[]="/home/sahil/Desktop/2011_09_26/2011_09_26_drive_0059_sync/image_00/data/0000000000.png";
-  /*sprintf(filename1, "0000000000.png", 0);
-  sprintf(filename2, "%010d.png", 1);
-*/
+
   char text[100];
   int fontFace = FONT_HERSHEY_PLAIN;
   double fontScale = 1;
   int thickness = 1;  
   cv::Point textOrg(10, 50);
 
-  //read the first two frames from the dataset
+  //read the first two frames from the dataset in gray scale
   img_1 = imread(filename1, IMREAD_GRAYSCALE);
   img_2 = imread(filename2, IMREAD_GRAYSCALE);
 
@@ -75,7 +73,7 @@ int main( int argc, char** argv )	{
     std::cout<< " --(!) Error reading images " << std::endl; return -1;
   }
 
-  // we work with grayscale images
+  // alternative method for grayscale
   //cvtColor(img_1_c, img_1, COLOR_BGR2GRAY);
   //cvtColor(img_2_c, img_2, COLOR_BGR2GRAY);
 
